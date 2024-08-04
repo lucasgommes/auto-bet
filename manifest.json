@@ -1,0 +1,11 @@
+{
+    "name": "Auto Bet",
+    "description": "Apostas automatizadas",
+    "version": "1.0",
+    "manifest_version": 3,
+    "permissions": ["activeTab", "scripting"],
+    "host_permissions": ["*://*/*"],
+    "action": {
+        "default_popup": "index.html"
+    }
+}

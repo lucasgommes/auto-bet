@@ -1,0 +1,29 @@
+form{
+    background-color: rgb(233, 247, 239);
+    width: 250px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bet-input{
+    width: 100%;
+    margin: 5px;
+    padding: 15px;
+    border: #ddd;
+    border-radius: 5px;
+}
+
+.button-bet{
+    width: 100%;
+    background-color: rgb(24, 74, 24);
+    color: white;
+    margin: 5px;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.button-bet:hover{
+    background-color: green;
+    
+}
