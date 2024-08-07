@@ -15,10 +15,10 @@ Esta é uma extensão de navegador desenvolvida para automatizar o preenchimento
    git clone https://github.com/lucasgommes/auto-bet.git
 
 2. **Carregue a Extensão no Navegador:**
-    Abra o Chrome e vá para chrome://extensions/.
-    Ative o Modo de desenvolvedor (Developer mode).
-    Clique em Carregar sem compactação (Load unpacked).
-    Selecione a pasta onde o código da extensão está localizado.
+   - Abra o Chrome e vá para chrome://extensions/.
+   - Ative o Modo de desenvolvedor (Developer mode).
+   - Clique em Carregar sem compactação (Load unpacked).
+   - Selecione a pasta onde o código da extensão está localizado.
 
 ## Uso
   **1. Digite os Números no Formulário:**
