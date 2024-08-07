@@ -29,4 +29,5 @@ Esta é uma extensão de navegador desenvolvida para automatizar o preenchimento
                      'Jogo 2': [2, 3, 4, 5, 6, 10, 12, 15, 16, 18, 19, 21, 23, 24, 25]
                     
   **2. Verifique a Página Web:**
+  
       A extensão preencherá automaticamente os campos correspondentes e clicará no botão "Adicionar ao carrinho" na página ativa.
