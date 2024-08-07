@@ -24,8 +24,8 @@ Esta é uma extensão de navegador desenvolvida para automatizar o preenchimento
 **Uso**
   **1. Digite os Números no Formulário:**
   
-     - Acesse a extensão clicando no ícone na barra de ferramentas do navegador.
-     - Insira os números no formato JSON no campo de entrada.
+     Acesse a extensão clicando no ícone na barra de ferramentas do navegador.
+     Insira os números no formato JSON no campo de entrada.
        **Exemplo:**  'Jogo 1': [2, 3, 4, 6, 8, 9, 10, 13, 15, 16, 17, 18, 20, 21, 25], 
                      'Jogo 2': [2, 3, 4, 5, 6, 10, 12, 15, 16, 18, 19, 21, 23, 24, 25]
                     
