@@ -12,8 +12,7 @@ Esta é uma extensão de navegador desenvolvida para automatizar o preenchimento
 
 1. **Clone o Repositório:**
    ```bash
-   git clone https://github.com/seuusuario/seurepositorio.git
-   cd seurepositorio
+   git clone https://github.com/lucasgommes/aut_bet.git
 
 2. **Carregue a Extensão no Navegador:**
     Abra o Chrome e vá para chrome://extensions/.
