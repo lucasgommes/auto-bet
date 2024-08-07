@@ -30,4 +30,5 @@ Esta é uma extensão de navegador desenvolvida para automatizar o preenchimento
                     
   **2. Verifique a Página Web:**
   
-      A extensão preencherá automaticamente os campos correspondentes e clicará no botão "Adicionar ao carrinho" na página ativa.
+      A extensão preencherá automaticamente os campos
+      correspondentes e clicará no botão "Adicionar ao carrinho" na página ativa.
