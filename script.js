@@ -1,47 +1,44 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('form');
 
-    const autoBet = (numbersInForms) => {
-        numbersInForms.forEach(valor => {
-            const seletor = `#n${valor}`;
-            const num = document.querySelector(seletor);
-            
-            if (num) {
-                num.click();
-            } else {
-                console.log(`Número ${valor} não encontrado.`);
-            } 
-
-        });
-    };
-
     form.addEventListener('submit', async (ev) => {
         ev.preventDefault();
         
-        const inputForm = document.getElementById('numeros').value;
-        const numbersInForms = inputForm.split(',').map(num => num.trim());
-
+        let inputForm = document.getElementById('numeros').value;
+        // Adiciona chaves ao redor da string e substitui aspas simples por aspas duplas
+        inputForm = `{${inputForm.replace(/'/g, '"')}}`;
+        
+        let jogos;
+        try {
+            jogos = JSON.parse(inputForm);
+        } catch (e) {
+            console.error('Erro ao analisar JSON:', e);
+            return;
+        }
 
         const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 
         chrome.scripting.executeScript({
             target: { tabId: tab.id },
-            function: (numbers) => {
-
-                numbers.forEach(valor => {
-                    const formattedValue = valor.toString().padStart(2, '0');
-                    const seletor = `#n${formattedValue}`;
-                    const num = document.querySelector(seletor);
+            function: (jogos) => {
+                Object.values(jogos).forEach(numeros => {
+                    numeros.forEach(valor => {
+                        const formattedValue = valor.toString().padStart(2, '0');
+                        const seletor = `#n${formattedValue}`;
+                        const num = document.querySelector(seletor);
+                        
+                        if (num) {
+                            num.click();
+                        } else {
+                            console.log(`Número ${valor} não encontrado.`);
+                        }
+                    });
                     
-                    if (num) {
-                        num.click();
-                    } else {
-                        console.log(`Número ${valor} não encontrado.`);
-                    }
+                    // Clica no botão para adicionar o jogo ao carrinho
+                    document.getElementById('colocarnocarrinho').click();
                 });
-                document.getElementById('colocarnocarrinho').click();
             },
-            args: [numbersInForms]
+            args: [jogos]
         });
     });
 });
