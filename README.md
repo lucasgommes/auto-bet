@@ -21,7 +21,7 @@ Esta é uma extensão de navegador desenvolvida para automatizar o preenchimento
     Clique em Carregar sem compactação (Load unpacked).
     Selecione a pasta onde o código da extensão está localizado.
 
-**Uso**
+## Uso
   **1. Digite os Números no Formulário:**
   
      Acesse a extensão clicando no ícone na barra de ferramentas do navegador.
