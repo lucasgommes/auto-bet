@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('form');
+    function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+    }
 
     form.addEventListener('submit', async (ev) => {
         ev.preventDefault();
@@ -28,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         const num = document.querySelector(seletor);
                         
                         if (num) {
+                            sleep(400)
                             num.click();
                         } else {
                             console.log(`Número ${valor} não encontrado.`);
