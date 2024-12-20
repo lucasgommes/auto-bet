@@ -1,8 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('form');
-    function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-    }
 
     form.addEventListener('submit', async (ev) => {
         ev.preventDefault();
@@ -24,23 +21,34 @@ document.addEventListener('DOMContentLoaded', () => {
         chrome.scripting.executeScript({
             target: { tabId: tab.id },
             function: (jogos) => {
-                Object.values(jogos).forEach(numeros => {
-                    numeros.forEach(valor => {
-                        const formattedValue = valor.toString().padStart(2, '0');
-                        const seletor = `#n${formattedValue}`;
-                        const num = document.querySelector(seletor);
-                        
-                        if (num) {
-                            sleep(400)
-                            num.click();
-                        } else {
-                            console.log(`Número ${valor} não encontrado.`);
+                function sleep(ms) {
+                    return new Promise(resolve => setTimeout(resolve, ms));
+                }
+
+                (async () => {
+                    for (const numeros of Object.values(jogos)) {
+                        for (const valor of numeros) {
+                            const formattedValue = valor.toString().padStart(2, '0');
+                            const seletor = `#n${formattedValue}`;
+                            const num = document.querySelector(seletor);
+
+                            if (num) {
+                                await sleep(100);
+                                num.click();
+                            } else {
+                                console.log(`Número ${valor} não encontrado.`);
+                            }
                         }
-                    });
-                    
-                    // Clica no botão para adicionar o jogo ao carrinho
-                    document.getElementById('colocarnocarrinho').click();
-                });
+
+                        // Clica no botão para adicionar o jogo ao carrinho
+                        const btnCarrinho = document.getElementById('colocarnocarrinho');
+                        if (btnCarrinho) {
+                            btnCarrinho.click();
+                        } else {
+                            console.log('Botão "colocar no carrinho" não encontrado.');
+                        }
+                    }
+                })();
             },
             args: [jogos]
         });
